@@ -5,10 +5,9 @@
     width: 100%;
     margin-top: 10rem;
     padding: 8rem;
-    // background-color: $blackish-pink;
-    background-image: linear-gradient( $black ,$blackish-pink);
+    background-image: linear-gradient( $black ,$blacker-pink);
     font-size: 1.4rem;
-    box-shadow: $box-shadow-light;
+    // box-shadow: $box-shadow-light;
 
     &__logo-box{
         text-align: center;
@@ -16,8 +15,8 @@
     }
     
     &__logo{
-        width: 4rem;
-        opacity: .8;
+        width: 3rem;
+        mix-blend-mode: lighten;
         khtml-opacity: .8;
         moz-opacity: .8;
         -webkit-filter: drop-shadow(.5rem 1rem 1rem $black);
