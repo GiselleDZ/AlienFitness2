@@ -1,0 +1,183 @@
+
+.btn {
+    &,
+    &:link,
+    &:visited{
+        position: relative;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        transition: all .2s;
+        text-decoration: none;
+        letter-spacing: .3rem;
+        font-weight: 600;
+
+        @include respond(tab-port){
+            letter-spacing: .15rem;
+        }
+    }
+
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .2s;
+    }
+    
+    &--white {
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        padding: 1.5rem 3rem;
+        border-radius: $border-radius-sm;
+        background-color: $light-thistle;
+        color: $light-tuscany;
+        
+        @include basic-blue-shadow(.3);
+        
+        @include dither-primary-button-hover;
+
+        @include respond(tab-land){
+            font-size: 1.1;
+            padding: 1rem 2rem;
+        }
+        
+        &--small{
+            letter-spacing: .1rem;
+            padding: 1rem 2rem;
+
+            @include respond(tab-port){
+                text-align: center;
+            }
+        }
+        
+        &::after {
+            background-color: $light-thistle;
+            font-weight: 800;
+            border-radius: $border-radius-sm;
+        }
+    }
+    
+    &--black{
+        background-color: $darker-tuscany;
+        font-weight: 800;
+        color: $white;
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        padding: 2rem 3rem 2rem 3rem;
+        border-radius: 0;
+        
+        @include dark-blue-shadow(.5);
+        
+        @include dither-primary-button-hover;
+
+        @include respond(big-desktop){
+            font-size: 2.8rem;
+        }
+        
+        @include respond(phone){
+            font-size: 1.2rem;
+            padding: 1rem 2rem 1rem 2rem;
+        }
+        
+        &--image{
+            border-radius: 0;
+            float: right;
+            width: 8rem;
+            height: 8rem;
+    
+            @include respond(tab-land){
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            @include respond(phone){
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+    }
+
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+
+        @include dark-blue-shadow(.6);
+    }
+
+    &--animated{
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text{
+    &,
+    &:link, 
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        padding: 1rem;
+        transition: all .2s;
+
+        border: none;
+        cursor: pointer;
+        letter-spacing: .1rem;
+    }
+
+    &--white{
+        color: $light-thistle;
+        border-bottom: 1px solid $light-thistle;
+        background-color: transparent;
+        font-weight: 600;
+        font-size: 1.6rem;
+        letter-spacing: .1rem;
+        
+        &:hover{
+            background-color: $white;
+            color: $darkest-tuscany;
+        }
+    }
+
+    &--medium{
+        &,
+        &:active,
+        &:visited,
+        &:link {
+            color: $darkest-tuscany;
+            border-bottom: 1px solid $light-tuscany;
+            background-color: transparent;
+            font-weight: 600;
+            font-size: 1.6rem;
+        }
+
+        @media (anyhover: hover){
+            &:hover{
+                color: $darkest-tuscany;
+                border: none;
+            }
+        } 
+    }
+
+    @media (anyhover: hover){
+        &:hover{
+            font-size: $default-font-size;
+            transform: translateY(-2px);
+            box-shadow: 0 1rem 2rem  #00000038;
+        }
+    }
+
+
+    &:active,
+    &:focus {
+        transform: translateY(-1px);
+    }
+}

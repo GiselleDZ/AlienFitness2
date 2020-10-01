@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $medium-tuscany $medium-queen-pink;
+}
+  
+  /* Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-track {
+    background: $medium-queen-pink;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: $medium-tuscany;
+    border-radius: 20px;
+    border: 3px solid $medium-queen-pink;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+
+    // > 1800
+    @include respond(big-desktop){ // 1rem = 12px
+        font-size: 75%; 
+    }
+
+    // < 1200
+    @include respond(tab-land){ // 1rem = 9 px
+        font-size: 56.25%; 
+    }
+
+    // < 900
+    @include respond(tab-port){ // 1rem = 8 px 
+        font-size: 50%; 
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $light-queen-pink;
+    padding: 1rem;
+
+
+    
+    @include respond(tab-port){ 
+        padding: 0; 
+    }
+}
+
+ 

@@ -1,0 +1,163 @@
+.card{
+    perspective: 300rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    top: 16rem;
+    left:0;
+    height: $card-height;
+    width: 70%;
+    margin: 0 auto;
+
+    @include respond(big-desktop){
+        height: $card-height-big;
+        top: 32rem;
+    }
+    
+    @include respond(tab-land){
+        height: $card-height-tab; 
+        width: 80%;    
+    }
+
+    @include respond(phone){
+        height: $card-height-phone;   
+    }
+
+
+    // S I D E   F O R M A T T I N G 
+    &__side{
+        height: $card-height;
+        transition: all 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: auto;
+        border-radius: $border-radius-sm;
+        background-color: white;
+
+        @include basic-blue-shadow(.4);
+
+        @include respond(big-desktop){
+            height: $card-height-big;   
+        }
+
+        @include respond(tab-land){
+            height: $card-height-tab;
+        }
+
+        @include respond(phone){
+            height: $card-height-phone;   
+        }
+
+    }
+
+    // F U N C T I O N A L I T Y
+    //card flips whole 360 to retain right side viewing, while the sides flip-180 to be seen or hidden
+    &--flip {transform: rotateY(360deg);}
+    &--flip &__side--back{transform: rotateY(0deg);}
+    &--flip &__side--front{transform: rotateY(180deg);}
+    &--no-flip {transform: rotateY(0);}
+    &__side--back{transform: rotateY(-180deg)}
+    &__side--front{transform: rotateY(0);}
+
+
+
+
+    //F R O N T    S T Y L I N G
+    &__about{
+        padding: 2rem;
+        padding-top: 3rem;
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+    &__text{
+        margin: 0 auto;
+    }
+
+
+    // B A C K   S I D E    S T Y L I N G
+    &__tech-logos{
+        background-color: white;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        padding: 4rem 8rem 8rem 8rem;
+        text-align: center;
+        overflow: auto;
+        
+        @include respond(tab-port){
+            padding: 4rem 2rem 4rem 6rem;
+        }
+        
+        @include respond(phone){
+            padding: 4rem 2rem 4rem 4rem;
+        }
+    }
+
+    &__logo-img{
+        margin: 1.5rem;
+        max-height: 4.5rem;
+        max-width: 7.5rem;
+        
+        &:not(:last-child){
+            margin-right: 8rem;
+        }
+
+        @include respond(big-desktop){
+            max-height: 5.5rem;
+            max-width: 9.5rem;
+            margin: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        @include respond(phone){
+            max-height: 4rem;
+            max-width: 7rem;
+            margin: 2rem;
+
+            &:not(:last-child){
+                margin-right: 4rem;
+            }
+        }
+    }
+
+    &__button-container{
+        position: absolute;
+        width: 100%;
+        top: 44rem;
+        margin: 0 auto;
+        margin-top: 10rem;
+
+        @include respond(big-desktop){
+            top: 52rem;
+        }
+        
+        @include respond(tab-land){
+            top: 48rem;
+        }
+
+        @include respond(phone){
+            top: 56rem;
+        }
+
+        &--right{
+            float: right;
+
+            @include respond(phone){
+                float: left; 
+            }
+        }
+
+        &--left{
+            float: left;
+
+            @include respond(phone){
+                margin-right: 6rem;
+            }
+
+        }
+    }
+    
+}   

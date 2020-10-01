@@ -1,0 +1,17 @@
+.loading{
+    height: 70vh;
+    text-align: center;
+
+    &__image{
+        margin-top: 15vh;
+        height: 40vh;
+        mix-blend-mode: multiply;
+    }
+
+    &__text{
+        margin-top: 4rem;
+        font-size: larger;
+        text-transform: uppercase;
+        letter-spacing: 2rem;
+    }
+}

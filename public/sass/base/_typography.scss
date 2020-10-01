@@ -1,0 +1,226 @@
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $light-tuscany;
+}
+
+.heading-primary {
+    font-family: "Playfair Display", serif;
+    color: $white;
+    display: block;
+    animation: moveInLeft ease-in .5s;
+    
+    &--main{
+        font-size: 7rem;
+        font-weight: 900;
+        letter-spacing: .4rem;
+        line-height: 9rem;
+
+        @include respond(tab-port){ 
+            letter-spacing: .7rem;
+            font-size: 8rem;
+        }
+        @include respond(phone){ 
+            letter-spacing: .5rem;
+            font-size: 7rem;
+        }
+    }
+
+    &--sub{
+        font-size: 6rem;
+        font-weight: 900;
+        letter-spacing: .4rem;
+        line-height: 9rem;
+
+        @include respond(tab-port){ 
+            letter-spacing: .3rem;
+            font-size: 5rem;
+        }
+
+        @include respond(phone){
+            letter-spacing: .3rem;
+            font-size: 3.5rem;
+        }
+    }
+
+    &--shadow{
+        text-shadow: 0 .5rem 1rem $light-tuscany;
+    }
+}
+
+.heading-secondary{
+    font-size: 3rem;
+    font-family: inherit;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    display: inline-block;
+    transition: all .5s;
+    
+    &--lightest{
+        background-image: linear-gradient( to right, $light-thistle, $white);
+        -webkit-background-clip: text;
+        color: transparent; 
+    }
+
+    &--lighter{
+        background-image: linear-gradient( to top, $medium-dark-queen-pink, $light-thistle);
+        -webkit-background-clip: text;
+        color: transparent; 
+    }
+
+    &--light{
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        color: $lightish-thistle; 
+    }
+
+    &--small{
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: $lightish-thistle;
+
+        @include respond(phone){
+            font-size: 1.5rem;
+            letter-spacing: .1rem;
+        }
+
+    }
+
+    &--dark{
+        background-image: linear-gradient( to right, $darkest-tuscany, $black);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    &:hover{
+        transform: translateY(-1px);
+        text-shadow: 4rem 5rem .5rem, rgba($black, .8);
+    }
+}
+
+.heading-tertiary{
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $light-tuscany;
+    letter-spacing: .2rem;
+
+    @include respond(tab-land){ 
+        font-size: 1.3rem;
+    }
+
+    &--light{
+        color: $medium-queen-pink;
+        font-weight: 400;
+    }
+}
+
+.heading-quaternary{
+    font-family: inherit;
+    font-size: 3rem;
+    font-weight: 600;
+
+    &--light{
+        color: $light-thistle;
+    }
+
+    &--dark{
+        color: $medium-tuscany;
+    }
+
+    @include respond(big-desktop){
+        font-size: 4rem;
+    }
+    
+    @include respond(phone){
+        font-size: 2rem;
+        letter-spacing: .1rem;
+    }
+
+}
+
+.paragraph{
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    
+    @include respond(tab-port){ 
+        font-size: 1.4rem;
+    }
+    
+    @include respond(phone){
+        font-size: 1.6rem;
+    }
+
+    &--light{color: $light-thistle;}
+
+    &--medium{ color: $light-tuscany;}
+
+    &--med-dark{color: $medium-tuscany;}
+
+    &--dark{color: $dark-tuscany;}
+
+    &--small{font-size: 1.1rem;}
+
+    &--medium-large{
+        font-size: 1.4rem;
+
+        @include respond(phone){ 
+            font-size: 1.6rem;
+        }
+    }
+
+    &--big{
+        font-size: 1.5rem;
+
+        @include respond(big-desktop){ 
+            font-size: 2rem;
+        }
+
+        @include respond(phone){ 
+            font-size: 1.5rem;
+        }
+
+    };
+
+    &--thick{font-weight: 500;}
+
+    &--tall{line-height: 2.5rem;}
+
+
+    &--link{
+        font-weight: 600;
+        font-size: larger;
+        color: $light-tuscany;
+        // text-transform: uppercase;
+        text-decoration: none;
+
+        @media (any-hover:hover){
+            &:hover{
+                color: $dark-tuscany;
+            }
+        }
+
+    }
+    
+}
+
+
+.list{
+    margin: 0 3rem 0 3rem;
+
+    &__item{
+        list-style: square;
+        color: $light-thistle;
+        
+        &:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+    }
+
+
+}
