@@ -26,6 +26,8 @@
   ],
   "dependencies": {
     "@tensorflow-models/posenet": "^2.2.1",
+    "@tensorflow/tfjs": "^2.4.0",
+    "@tensorflow/tfjs-backend-wasm": "^2.4.0",
     "@tensorflow/tfjs-converter": "^2.4.0",
     "@tensorflow/tfjs-core": "^2.4.0",
     "await-to-js": "^2.1.1",

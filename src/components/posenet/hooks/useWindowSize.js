@@ -4,6 +4,9 @@ function useWindowSize() {
   const isClient = typeof window === 'object'
 
   function getSize() {
+
+    console.log(window)
+
     return {
       width: isClient ? window.innerWidth : undefined,
       height: isClient ? window.innerHeight : undefined
