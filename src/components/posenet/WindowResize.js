@@ -15,7 +15,7 @@ function debounce(fn, ms) {
 export default function WindowResize() {
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
-    width: window.innerWidth
+    width: window.innerWidth/ 2
   })
   React.useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {

@@ -14,7 +14,7 @@ export default function useInputImage({
   useEffect(
     () => {
       if (typeof input === 'object') {
-        input.width = width
+        input.width = width 
         input.height = height
       }
       if (input) {

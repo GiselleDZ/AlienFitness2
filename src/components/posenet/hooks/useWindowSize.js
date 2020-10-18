@@ -5,10 +5,8 @@ function useWindowSize() {
 
   function getSize() {
 
-    console.log(window)
-
     return {
-      width: isClient ? window.innerWidth : undefined,
+      width: isClient ? window.innerWidth  : undefined,
       height: isClient ? window.innerHeight : undefined
     }
   }

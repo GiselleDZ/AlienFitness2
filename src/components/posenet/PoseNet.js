@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import Loading from './Loading'
 import useInputImage from './hooks/useInputImage'
 import UseLoadPoseNet from './hooks/useLoadPoseNet'
-import useWindowSize from './hooks/useWindowSize'
 import {drawKeypoints, getConfidentPoses} from '../../../utils'
-import WindowResize from './WindowResize'
+// import useWindowSize from './hooks/useWindowSize'
+// import WindowResize from './WindowResize'
 
 export default function PoseNet({
   style,
@@ -46,11 +46,15 @@ export default function PoseNet({
       if (!net || !image) return () => {}
       if ([net, image].some(elem => elem instanceof Error)) return () => {}
 
-      const videoWidth = width
-      const videoHeight = videoWidth * 0.75
+      const ratio = width/height
+      console.log(width, height, ratio)
+      const videoWidth = width 
+      const videoHeight = height /2.2
 
       const ctx = canvasRef.current.getContext('2d')
+
       const intervalID = setInterval(async () => {
+
         try {
           const poses = await net.estimatePoses(
             image,
@@ -68,6 +72,7 @@ export default function PoseNet({
           clearInterval(intervalID)
           setErrorMessage(err.message)
         }
+
       }, Math.round(1000 / frameRate))
 
       return () => clearInterval(intervalID)
