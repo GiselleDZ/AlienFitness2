@@ -1148,3 +1148,9 @@ body {
 
 .header {
   position: relative; }
+
+#video {
+  position: relative;
+  margin: 2rem;
+  margin-top: 20rem;
+  border: 0.1rem dashed #DC18B8; }

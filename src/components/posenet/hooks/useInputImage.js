@@ -13,10 +13,10 @@ export default function useInputImage({
   const [image, setImage] = useState()
   useEffect(
     () => {
-      if (typeof input === 'object') {
-        input.width = width 
-        input.height = height
-      }
+      // if (typeof input === 'object') {
+      //   input.width = width 
+      //   input.height = height
+      // }
       if (input) {
         setImage(input)
         return
@@ -27,6 +27,8 @@ export default function useInputImage({
         setImage(userMediaError)
         return
       }
+
+
       async function setupCamera() {
         const [err, stream] = await to(
           navigator.mediaDevices.getUserMedia(
@@ -39,6 +41,9 @@ export default function useInputImage({
         }
         const video = videoRef.current
         video.srcObject = stream
+
+        // console.log(video)
+
         video.onloadedmetadata = () => {
           video.play()
           setImage(video)

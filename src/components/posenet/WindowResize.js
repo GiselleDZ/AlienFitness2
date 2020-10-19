@@ -12,16 +12,28 @@ function debounce(fn, ms) {
   }
 }
 
+
 export default function WindowResize() {
+
+
+  
+
   const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth/ 2
+    height: window.innerHeight * .47,
+    width: window.innerWidth * .47
   })
+
+
   React.useEffect(() => {
+
+    const videoContainer = document.getElementsByTagName("video")
+    const videoWidth = videoContainer[0].width
+    const videoHeight = videoContainer[0].height
+
     const debouncedHandleResize = debounce(function handleResize() {
       setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth
+        height: videoHeight,
+        width: videoWidth
       })
     }, 1000)
 

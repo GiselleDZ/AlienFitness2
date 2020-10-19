@@ -39,17 +39,13 @@ export default function PoseNet({
     facingMode,
     frameRate
   })
-
-  // const {wiiidth, heeeight} = useWindowSize()
   useEffect(
     () => {
       if (!net || !image) return () => {}
       if ([net, image].some(elem => elem instanceof Error)) return () => {}
 
-      const ratio = width/height
-      console.log(width, height, ratio)
       const videoWidth = width 
-      const videoHeight = height /2.2
+      const videoHeight = width * .75
 
       const ctx = canvasRef.current.getContext('2d')
 
@@ -81,9 +77,7 @@ export default function PoseNet({
   )
 
   const videoWidth = width
-
-  const videoHeight = videoWidth * 0.75
-  // console.log('width in posenet component', videoHeight, width)
+  const videoHeight = width * .75
 
   return (
     <>
@@ -96,13 +90,14 @@ export default function PoseNet({
         style={{width: '0', height: '0'}}
         width={videoWidth}
         height={videoHeight}
-      />
+        />
       <canvas
         style={style}
         className={className}
         ref={canvasRef}
-        width={width}
-        height={height}
+        width={videoWidth}
+        height={videoHeight}
+        id="video"
       />
     </>
   )
