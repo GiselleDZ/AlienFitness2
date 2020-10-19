@@ -3,9 +3,8 @@ import InstructorCanvas from './threejs/InstructorCanvas'
 
 const DashboardControls = () => {
   return (
-    <div className="dashboard">
+
           <InstructorCanvas />
-    </div>
   )
 }
 
